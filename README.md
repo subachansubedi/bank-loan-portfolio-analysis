@@ -1,6 +1,8 @@
 # Bank Loan Portfolio Analysis
 
-<img src="./Screenshots/bank.jpg" alt="Bank Loan Portfolio Analysis">
+<p align="center">
+  <img src="./Screenshots/bank.jpg" alt="Bank Loan Portfolio Analysis" width="100%">
+</p>
 
 **An Excel-based consumer loan portfolio analysis covering 38,576 loans and $435.8M in funded amount, evaluating portfolio performance, repayment behavior, and credit risk through interactive dashboards, PivotTables, PivotCharts, and dynamic formulas.**
 
