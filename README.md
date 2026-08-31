@@ -1,6 +1,6 @@
 # Bank Loan Portfolio Analysis
 
-![Bank Loan Portfolio Analysis](screenshots/bank.jpg)
+![Bank Loan Portfolio Analysis](screenshots/bank.jpeg)
 
 **An Excel-based consumer loan portfolio analysis covering 38,576 loans and $435.8M in funded amount, evaluating portfolio performance, repayment behavior, and credit risk through interactive dashboards, PivotTables, PivotCharts, and dynamic formulas.**
 
@@ -72,7 +72,7 @@ This simplified classification allows the dashboard to compare loan counts, fund
 
 ### Summary Dashboard
 
-![Summary Dashboard](screenshots/summary_dashboard.png)
+![Summary Dashboard](screenshots/summary.png)
 
 The Summary Dashboard provides a high-level view of portfolio performance and risk.
 
@@ -83,7 +83,7 @@ The Summary Dashboard provides a high-level view of portfolio performance and ri
 
 ### Overview Dashboard
 
-![Overview Dashboard](screenshots/overview_dashboard.png)
+![Overview Dashboard](screenshots/overview.png)
 
 The Overview Dashboard provides a broader view of lending activity, portfolio composition, and borrower characteristics.
 
