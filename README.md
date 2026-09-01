@@ -1,10 +1,6 @@
 # Bank Loan Portfolio Analysis
 
-<p align="center">
-  <img src="./Screenshots/bank.jpg" alt="Bank Loan Portfolio Analysis" width="100%">
-</p>
-
-**An Excel-based consumer loan portfolio analysis covering 38,576 loans and $435.8M in funded amount, evaluating portfolio performance, repayment behavior, and credit risk through interactive dashboards, PivotTables, PivotCharts, and dynamic formulas.**
+**An Excel-based consumer loan portfolio analysis covering 38,576 loans and $473.1M in funded amount, evaluating portfolio performance, repayment behavior, and credit risk through interactive dashboards, PivotTables, PivotCharts, and dynamic formulas.**
 
 ---
 
@@ -12,12 +8,12 @@
 
 This project analyzes a consumer loan portfolio to evaluate lending performance, repayment behavior, and credit risk exposure.
 
-It was built entirely in Microsoft Excel as a self-contained workbook. Every reported metric is calculated dynamically through PivotTables, PivotCharts, slicers, and formulas rather than being entered manually.
+It was built entirely in Microsoft Excel as a self-contained workbook — with no external database or BI tool. Every reported metric is calculated dynamically through PivotTables, PivotCharts, slicers, and formulas rather than being entered manually.
 
 - **Records analyzed:** 38,576 loans across 25 fields
 - **Data period:** 2021
-- **Total funded amount:** $435,757,075
-- **Total amount received:** $473,070,933
+- **Total funded amount:** $473,070,933
+- **Total amount received:** $435,757,075
 - **Good Loan Share:** 86.18%
 - **Bad Loan Share:** 13.82%
 - **Data source:** [Banking Loan Dataset — Kaggle]
@@ -55,16 +51,16 @@ This simplified classification allows the dashboard to compare loan counts, fund
 | KPI | Value |
 |---|---:|
 | Total Loan Applications | 38,576 |
-| Total Funded Amount | $435,757,075 |
-| Total Amount Received | $473,070,933 |
+| Total Funded Amount | $473,070,933 |
+| Total Amount Received | $435,757,075 |
 | Average Interest Rate | 12.05% |
 | Average Debt-to-Income Ratio | 13.33% |
 | Good Loan Share | 86.18% |
 | Bad Loan Share | 13.82% |
-| Good Loan — Funded Amount | $370,224,850 |
-| Good Loan — Amount Received | $435,786,170 |
-| Bad Loan — Funded Amount | $65,532,225 |
-| Bad Loan — Amount Received | $37,284,763 |
+| Good Loan — Funded Amount | $435,786,170 |
+| Good Loan — Amount Received | $370,224,850 |
+| Bad Loan — Funded Amount | $37,284,763 |
+| Bad Loan — Amount Received | $65,532,225 |
 | 36-Month Term Loans | 28,237 |
 | 60-Month Term Loans | 10,339 |
 
@@ -74,7 +70,7 @@ This simplified classification allows the dashboard to compare loan counts, fund
 
 ### Summary Dashboard
 
-<img src="./Screenshots/summary.png" alt="Summary Dashboard">
+![Summary Dashboard](Screenshots/summary.png)
 
 The Summary Dashboard provides a high-level view of portfolio performance and risk.
 
@@ -85,7 +81,7 @@ The Summary Dashboard provides a high-level view of portfolio performance and ri
 
 ### Overview Dashboard
 
-<img src="./Screenshots/overview.png" alt="Overview Dashboard">
+![Overview Dashboard](Screenshots/overview.png)
 
 The Overview Dashboard provides a broader view of lending activity, portfolio composition, and borrower characteristics.
 
@@ -101,9 +97,9 @@ The Overview Dashboard provides a broader view of lending activity, portfolio co
 ## Key Findings
 
 - **86.18% of loans are classified as Good Loans** (Current or Fully Paid), while **13.82% are classified as Bad Loans** (Charged Off).
-- **Total amount received ($473.1M) exceeds total funded amount ($435.8M)**, reflecting cumulative payments recorded in the dataset, including principal and interest components.
-- Good loans have **$435.8M in payments received against $370.2M funded**.
-- Bad loans have **$37.3M in payments received against $65.5M funded**, meaning payments received equal approximately **57% of the funded amount**.
+- **Total funded amount ($473.1M) exceeds total amount received ($435.8M)**, reflecting cumulative payments recorded in the dataset to date.
+- Good loans have **$370.2M in payments received against $435.8M funded**.
+- Bad loans have **$65.5M in payments received against $37.3M funded**.
 - **36-month loans outnumber 60-month loans by approximately 2.7 to 1**, with 28,237 loans compared with 10,339.
 - **Debt consolidation** is the leading loan purpose, followed by credit card refinancing.
 - Most borrowers either **rent or have a mortgage**, while relatively few own their homes outright.
@@ -145,13 +141,9 @@ The Overview Dashboard provides a broader view of lending activity, portfolio co
 - Loan purpose analysis
 - Borrower profile analysis
 
----
+### Workbook Structure
 
-## Limitations & Known Issues
-
-- The analysis is based on historical loan data from **2021** and should not be interpreted as a predictive credit-risk model. No predictive model for future defaults or expected losses is included — the analysis is descriptive and diagnostic, not causal.
-- The Good vs. Bad Loan classification is a simplified segmentation based on loan status and does not represent a comprehensive credit-risk methodology. Aggregate charge-off rates can hide significant differences across borrower segments, loan purposes, terms, and credit grades — segment-level breakdown by grade, term, and purpose is not yet included.
-- Amount received reflects payments recorded in the dataset and should not be interpreted as a final lifetime recovery rate.
+The workbook is organized into three layers: raw loan data (Excel Table), a calculation layer of PivotTables and derived KPI formulas, and a dashboard layer of PivotCharts and slicers with no calculations of its own. This keeps every reported figure traceable back to a single source on the Design Sheet.
 
 ---
 
@@ -185,16 +177,16 @@ bank-loan-portfolio-analysis/
 │   └── Bank_Loan_Analysis_Project.xlsx
 │
 └── Screenshots/
-    ├── bank.jpeg
-    ├── summary_dashboard.png
-    └── overview_dashboard.png
+    ├── bank.jpg
+    ├── summary.png
+    └── overview.png
 ```
 
 ---
 
 ## How to Use This Project
 
-1. Download the workbook from the `excel/` folder.
+1. Download the workbook from the `Excel/` folder.
 2. Open `Bank_Loan_Analysis_Project.xlsx` in **Microsoft Excel 2016 or later**.
 3. Open the `SUMMARY DASHBOARD` tab to view portfolio-level KPIs and risk metrics.
 4. Open the `OVERVIEW DASHBOARD` tab to explore portfolio trends and borrower characteristics.
@@ -219,6 +211,15 @@ bank-loan-portfolio-analysis/
 
 ---
 
+## Limitations & Known Issues
+
+- The analysis is based on historical loan data from **2021** and should not be interpreted as a predictive credit-risk model. No predictive model for future defaults or expected losses is included — the analysis is descriptive and diagnostic, not causal.
+- The Good vs. Bad Loan classification is a simplified segmentation based on loan status and does not represent a comprehensive credit-risk methodology. Aggregate charge-off rates can hide significant differences across borrower segments, loan purposes, terms, and credit grades — segment-level breakdown by grade, term, and purpose is not yet included.
+- Amount received reflects payments recorded in the dataset and should not be interpreted as a final lifetime recovery rate.
+- The dataset is publicly available and does not represent proprietary information from an actual bank.
+
+---
+
 ## Author
 
 **Subachan Subedi**
@@ -228,4 +229,4 @@ bank-loan-portfolio-analysis/
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
