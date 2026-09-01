@@ -181,10 +181,10 @@ bank-loan-portfolio-analysis/
 ├── README.md
 ├── LICENSE
 │
-├── excel/
+├── Excel/
 │   └── Bank_Loan_Analysis_Project.xlsx
 │
-└── screenshots/
+└── Screenshots/
     ├── bank.jpeg
     ├── summary_dashboard.png
     └── overview_dashboard.png
@@ -226,3 +226,6 @@ bank-loan-portfolio-analysis/
 
 ---
 
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
