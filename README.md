@@ -1,232 +1,144 @@
-# Bank Loan Portfolio Analysis
+<p align="center">
+  <img src="Screenshots/banner.png" alt="Bank Loan Portfolio Analysis — Excel Dashboard Project" width="100%">
+</p>
 
-**An Excel-based consumer loan portfolio analysis covering 38,576 loans and $473.1M in funded amount, evaluating portfolio performance, repayment behavior, and credit risk through interactive dashboards, PivotTables, PivotCharts, and dynamic formulas.**
+# 🏦 Bank Loan Portfolio Analysis
 
----
+An Excel project for exploring lending activity, loan status, and borrower profiles across **38,576 consumer loans**. Two interactive dashboards bring together portfolio KPIs, monthly trends, and category comparisons using PivotTables, PivotCharts, slicers, and linked formulas.
 
-## Project Summary
+<p>
+  <img alt="Built with Microsoft Excel" src="https://img.shields.io/badge/Microsoft_Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white">
+  <img alt="Loan records" src="https://img.shields.io/badge/Loans-38%2C576-2563EB?style=flat-square">
+  <img alt="Issue year 2021" src="https://img.shields.io/badge/Issue_year-2021-123154?style=flat-square">
+  <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-087F74?style=flat-square">
+</p>
 
-This project analyzes a consumer loan portfolio to evaluate lending performance, repayment behavior, and credit risk exposure.
+**Quick links:** [Excel dashboard](Excel/Bank_Loan_Analysis_Project.xlsx) · [CSV data](Data/financial_loan.csv) · [Excel data](Data/Bank_Loan_Data.xlsx) · [Project report](Report/Bank_Loan_Project_Report.pdf)
 
-It was built entirely in Microsoft Excel as a self-contained workbook — with no external database or BI tool. Every reported metric is calculated dynamically through PivotTables, PivotCharts, slicers, and formulas rather than being entered manually.
+## 📌 Project overview
 
-- **Records analyzed:** 38,576 loans across 25 fields
-- **Data period:** 2021
-- **Total funded amount:** $473,070,933
-- **Total amount received:** $435,757,075
-- **Good Loan Share:** 86.18%
-- **Bad Loan Share:** 13.82%
-- **Data source:** [Banking Loan Dataset — Kaggle]
+A loan portfolio can contain thousands of accounts with different repayment statuses, terms, and borrower backgrounds. This project brings those records together so a reader can understand the size of the portfolio, see how activity changes through the year, and explore where loan volume is concentrated.
 
-> This is an educational portfolio-analysis project using a publicly available Kaggle dataset. It does not represent proprietary data from an actual bank.
+The analysis is built in Microsoft Excel. The `Bank Loan Data` sheet holds the loan table, the `Design Sheet` contains supporting PivotTables and formulas, and the two dashboard sheets present the results.
 
----
+## 🎯 Questions explored
 
-## Business Problem
+- How many loans are in the portfolio, and what amounts are recorded as funding and payments?
+- How many loans are Current, Fully Paid, or Charged Off?
+- How does monthly lending activity change during 2021?
+- Where is loan volume concentrated by state, loan purpose, and repayment term?
+- How do employment length and home ownership vary across borrowers?
 
-Lending institutions need ongoing visibility into portfolio health to manage credit risk, understand repayment behavior, and support underwriting decisions.
+## 📊 Portfolio snapshot
 
-This project answers four core questions:
+![Portfolio snapshot calculated from the workbook data](Screenshots/portfolio_snapshot.png)
 
-- How large is the loan portfolio, and how much has been collected?
-- What proportion of loans are in good status versus charged off?
-- How is lending activity trending month over month?
-- Where is loan volume and risk concentrated by state, purpose, term, and borrower profile?
+The figures below use the **source-column definitions** in the supplied workbook, with all records included.
 
----
+| Measure | Value | Meaning |
+|:--|--:|:--|
+| Loan applications | 38,576 | Number of loan records |
+| Funded amount | $435,757,075 | Sum of `loan_amount` |
+| Amount received | $473,070,933 | Sum of `total_payment` |
+| Average interest rate | 12.05% | Simple average of `int_rate` |
+| Average debt-to-income ratio | 13.33% | Simple average of `dti` |
+| Good loans | 33,243 / 86.18% | Current or Fully Paid |
+| Bad loans | 5,333 / 13.82% | Charged Off |
+| 36-month term | 28,237 / 73.20% | Share of loan records |
+| 60-month term | 10,339 / 26.80% | Share of loan records |
 
-## Loan Classification
+## 🖥️ Explore the dashboards
 
-Loan statuses are grouped into two categories for portfolio-level risk analysis:
+### Summary dashboard
 
-- **Good Loan** — Current or Fully Paid
-- **Bad Loan** — Charged Off
+![Refreshed Summary dashboard design preview](Screenshots/summary.png)
 
-This simplified classification allows the dashboard to compare loan counts, funded amounts, and amounts received across the two portfolio segments.
+The `SUMMARY DASHBOARD` brings together the main KPIs, MTD and MoM measures, Good and Bad Loan comparisons, and loan-status charts. Grade and purpose slicers let users explore the connected views.
 
----
+### Overview dashboard
 
-## Key Performance Indicators
+![Refreshed Overview dashboard design preview](Screenshots/overview.png)
 
-| KPI | Value |
-|---|---:|
-| Total Loan Applications | 38,576 |
-| Total Funded Amount | $473,070,933 |
-| Total Amount Received | $435,757,075 |
-| Average Interest Rate | 12.05% |
-| Average Debt-to-Income Ratio | 13.33% |
-| Good Loan Share | 86.18% |
-| Bad Loan Share | 13.82% |
-| Good Loan — Funded Amount | $435,786,170 |
-| Good Loan — Amount Received | $370,224,850 |
-| Bad Loan — Funded Amount | $37,284,763 |
-| Bad Loan — Amount Received | $65,532,225 |
-| 36-Month Term Loans | 28,237 |
-| 60-Month Term Loans | 10,339 |
+The `OVERVIEW DASHBOARD` shows monthly loan applications, a state map, loan terms, employment length, loan purpose, and home ownership. The map and treemap remain native Excel charts.
 
----
+The previews use native cached content. Desktop Excel displays the full native map, treemap, and live slicers.
 
-## Dashboards
+| Workbook sheet | Role |
+|:--|:--|
+| `SUMMARY DASHBOARD` | Portfolio KPIs and status comparisons |
+| `OVERVIEW DASHBOARD` | Lending trends and borrower composition |
+| `Design Sheet` | Supporting PivotTables and KPI formulas |
+| `Bank Loan Data` | Loan records in the native Excel table `Table1` |
 
-### Summary Dashboard
+**Navigation note:** The existing `DETAILS` button opens the loan-data sheet. There is no separate Details dashboard in this workbook.
 
-![Summary Dashboard](Screenshots/summary.png)
+## 🗂️ Data and definitions
 
-The Summary Dashboard provides a high-level view of portfolio performance and risk.
+The export contains **38,576 rows and 25 fields**, including the workbook's derived `Good Vs Bad Loan` classification. Loan issue dates fall in **2021**. The original project identifies the source as a public Kaggle banking-loan dataset, but its exact dataset URL is not included in the supplied repository.
 
-- Core KPI cards with **month-to-date (MTD)** values and month-over-month change
-- Good vs. Bad Loan breakdown by loan count, funded amount, and amount received
-- Loan status grid covering Current, Fully Paid, and Charged Off
-- Interactive slicers for filtering portfolio metrics and visualizations
+| Field group | Examples |
+|:--|:--|
+| Record identifiers | `id`, `member_id` |
+| Borrower information | `annual_income`, `emp_length`, `emp_title`, `home_ownership` |
+| Loan characteristics | `loan_amount`, `term`, `purpose`, `grade`, `sub_grade`, `int_rate` |
+| Status and payments | `loan_status`, `total_payment`, `installment` |
+| Dates and location | `issue_date`, payment dates, `address_state` |
+| Other measures | `dti`, `total_acc`, `verification_status`, `application_type` |
 
-### Overview Dashboard
+**Good Loan** means Current or Fully Paid. **Bad Loan** means Charged Off. “Good” is a reporting category, so a Current loan can still default later.
 
-![Overview Dashboard](Screenshots/overview.png)
+The CSV exports the existing classification as values and uses `YYYY-MM-DD` dates. The data-only Excel file keeps the native table and its classification formula. Neither export includes the extra totals row below the source table.
 
-The Overview Dashboard provides a broader view of lending activity, portfolio composition, and borrower characteristics.
+## 🔍 What the data shows
 
-- Monthly trend of loan applications, funding, and collections
-- State-level loan volume using an Excel Map Chart
-- Loan term distribution
-- Loan purpose breakdown using a Treemap
-- Employment length and home ownership breakdowns
-- Interactive filtering through slicers
+- **Most records are Fully Paid:** 32,145 loans, compared with 1,098 Current loans and 5,333 Charged Off loans.
+- **Monthly loan volume rises across the year:** January has 2,332 applications and December has 4,314. December is about 85.0% higher than January; the series does not increase in every single month.
+- **Debt consolidation leads loan purposes:** 18,214 loans, or 47.22% of the portfolio. Credit card loans follow with 4,998 records.
+- **Shorter terms are more common:** 36-month loans represent 73.20% of records.
+- **Renting and mortgages dominate:** 18,439 borrowers rent and 17,198 have a mortgage, together accounting for 92.38% of records.
+- **California has the largest state count:** 6,894 loans, followed by New York with 3,701. These counts show concentration, rather than a comparison of state-level credit risk.
 
----
+## 🛠️ Tools and approach
 
-## Key Findings
+**Microsoft Excel:** native tables, PivotTables, PivotCharts, slicers, `GETPIVOTDATA`, linked shapes, a map chart, and a treemap.
 
-- **86.18% of loans are classified as Good Loans** (Current or Fully Paid), while **13.82% are classified as Bad Loans** (Charged Off).
-- **Total funded amount ($473.1M) exceeds total amount received ($435.8M)**, reflecting cumulative payments recorded in the dataset to date.
-- Good loans have **$370.2M in payments received against $435.8M funded**.
-- Bad loans have **$65.5M in payments received against $37.3M funded**.
-- **36-month loans outnumber 60-month loans by approximately 2.7 to 1**, with 28,237 loans compared with 10,339.
-- **Debt consolidation** is the leading loan purpose, followed by credit card refinancing.
-- Most borrowers either **rent or have a mortgage**, while relatively few own their homes outright.
-
----
-
-## Recommendations
-
-- **Break down charge-off rates** by credit grade, term, and purpose before adjusting underwriting policy — the aggregate rate alone does not show where risk is concentrated.
-- **Track funded-vs.-received trends monthly** rather than relying only on cumulative totals, to identify changes in repayment behavior.
-- **Compare 36-month and 60-month loan performance** directly to determine whether longer terms warrant different pricing or approval criteria.
-- **Investigate state-level concentration** to identify geographic segments contributing disproportionately to loan volume or credit risk.
-- **Analyze loan-purpose performance** to determine whether certain purposes consistently exhibit higher charge-off rates or weaker repayment performance.
-
----
-
-## Tools & Techniques
-
-### Microsoft Excel
-
-- PivotTables
-- PivotCharts
-- Slicers
-- Native Excel Tables
-- Dynamic formulas
-- `GETPIVOTDATA`
-- Map Charts
-- Treemap Charts
-
-### Analytical Approach
-
-- Data cleaning and preparation
-- Good vs. Bad Loan risk classification
-- Portfolio-level KPI development
-- Month-over-month trend analysis
-- Category-level segmentation
-- Geographic analysis
-- Loan term analysis
-- Loan purpose analysis
-- Borrower profile analysis
-
-### Workbook Structure
-
-The workbook is organized into three layers: raw loan data (Excel Table), a calculation layer of PivotTables and derived KPI formulas, and a dashboard layer of PivotCharts and slicers with no calculations of its own. This keeps every reported figure traceable back to a single source on the Design Sheet.
-
----
-
-## Skills Demonstrated
-
-- Data cleaning and preparation
-- Exploratory data analysis
-- PivotTable-based KPI design
-- Dynamic formula reporting with `GETPIVOTDATA`
-- Interactive Excel dashboard development
-- Dashboard design and visual hierarchy
-- Chart selection matched to data type
-- Geographic and hierarchical visualization
-- Business-oriented risk segmentation
-- Portfolio performance analysis
-- Trend analysis
-- Data storytelling
-- Translating raw data into decision-ready insights
-
----
-
-## Repository Structure
-
-```text
-bank-loan-portfolio-analysis/
-│
-├── README.md
-├── LICENSE
-│
-├── Excel/
-│   └── Bank_Loan_Analysis_Project.xlsx
-│
-└── Screenshots/
-    ├── bank.jpg
-    ├── summary.png
-    └── overview.png
-```
-
----
-
-## How to Use This Project
-
-1. Download the workbook from the `Excel/` folder.
-2. Open `Bank_Loan_Analysis_Project.xlsx` in **Microsoft Excel 2016 or later**.
-3. Open the `SUMMARY DASHBOARD` tab to view portfolio-level KPIs and risk metrics.
-4. Open the `OVERVIEW DASHBOARD` tab to explore portfolio trends and borrower characteristics.
-5. Use the available slicers to filter the dashboards interactively.
-6. KPI cards, PivotCharts, and related visualizations update based on the selected filters.
-7. Open the `Design Sheet` to review the PivotTable structures and formula logic behind the reported metrics.
-
----
-
-## Future Improvements
-
-- Add charge-off rates by credit grade
-- Analyze risk by loan purpose and term
-- Compare 36-month vs. 60-month loan performance
-- Add state-level charge-off analysis
-- Develop borrower risk segmentation
-- Add cohort-based repayment analysis
-- Build a predictive default model
-- Calculate expected loss and recovery metrics
-- Recreate the dashboard in Power BI
-- Automate data refresh and reporting
-
----
-
-## Limitations & Known Issues
-
-- The analysis is based on historical loan data from **2021** and should not be interpreted as a predictive credit-risk model. No predictive model for future defaults or expected losses is included — the analysis is descriptive and diagnostic, not causal.
-- The Good vs. Bad Loan classification is a simplified segmentation based on loan status and does not represent a comprehensive credit-risk methodology. Aggregate charge-off rates can hide significant differences across borrower segments, loan purposes, terms, and credit grades — segment-level breakdown by grade, term, and purpose is not yet included.
-- Amount received reflects payments recorded in the dataset and should not be interpreted as a final lifetime recovery rate.
-- The dataset is publicly available and does not represent proprietary information from an actual bank.
-
----
-
-## Author
-
-**Subachan Subedi**
-[LinkedIn](https://www.linkedin.com/in/subachan-subedi/)
-
----
-
-## License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+The workflow starts with the loan table, groups loan statuses, aggregates measures in the supporting sheet, and displays those results through charts and KPI cards. MTD means month to date; MoM compares a month with the previous month. 
+
+## 🚀 How to use
+
+1. Download or clone this repository and open `Excel/Bank_Loan_Analysis_Project.xlsx` in a recent desktop version of Microsoft Excel. 
+2. Start with `SUMMARY DASHBOARD` for the portfolio view.
+3. Open `OVERVIEW DASHBOARD` to explore trends and borrower categories.
+4. Use the grade and purpose slicers on the connected charts and PivotTables. Clear filters before comparing with the full-portfolio figures in this README.
+5. Open `Design Sheet` to inspect the supporting calculations, or use `DETAILS` to reach the loan table.
+6. Read the [Project report](Report/Bank_Loan_Project_Report.pdf) for definitions, findings, and limitations.
+
+Some browser previews and alternative spreadsheet apps do not fully support Excel slicers or the native map and treemap. Opening the workbook in desktop Excel provides the intended experience.
+
+## 📁 Repository contents
+
+| Folder or file | Contents |
+|:--|:--|
+| `Excel/Bank_Loan_Analysis_Project.xlsx` | Refreshed analysis workbook |
+| `Data/financial_loan.csv` | Export of all 38,576 loan records |
+| `Data/Bank_Loan_Data.xlsx` | Standalone Excel data table |
+| `Report/Bank_Loan_Project_Report.pdf` | Project report |
+| `Screenshots/banner.png` | AI-generated project banner |
+| `Screenshots/portfolio_snapshot.png` | Data-based portfolio visual |
+| `Screenshots/summary.png` and `overview.png` | Dashboard design previews |
+| `LICENSE` | Existing MIT license |
+
+## 💡 Further analysis
+
+Useful next steps include comparing charge-off shares by grade, term, purpose, and state, and checking repayment patterns by loan cohort. These are future improvements beyond this visual refresh and display correction.
+
+## 📝 Interpretation and limitations
+
+This is a historical, descriptive portfolio project. It does not predict defaults, calculate expected loss, or establish that a borrower characteristic causes credit risk. Loan counts alone do not show the risk of a segment.
+
+`total_payment` is the payment amount recorded in the supplied table. It should not be treated as profit, a final lifetime recovery rate, or a complete statement of cash flows. The averages shown are simple averages, rather than averages weighted by loan size.
+
+## 👤 Author
+
+**Subachan Subedi** · [GitHub](https://github.com/subachansubedi) · [LinkedIn](https://www.linkedin.com/in/subachan-subedi/)
+
